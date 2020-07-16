@@ -54,7 +54,7 @@ def checkout(cart, coupons)
     index += 1
   end
   if (grand_total > 100)
-    grand_total *= 0.90
+    grand_total *= 0.90 # equivalent to grand_total = grand_total * 0.90.
   end
   grand_total
 end
