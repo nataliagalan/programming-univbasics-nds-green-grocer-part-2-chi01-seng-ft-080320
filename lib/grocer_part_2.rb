@@ -21,7 +21,7 @@ def apply_coupons(cart, coupons)
       end
     coupons_index += 1
   end
-  cart
+  cart #returns updated cart array
 end
 
 def apply_clearance(cart)
