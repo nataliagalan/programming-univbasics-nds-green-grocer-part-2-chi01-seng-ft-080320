@@ -25,7 +25,7 @@ end
 
 def apply_clearance(cart)
   cart_index = 0
-  ready_for_checkout = Array.new
+  ready_for_checkout = []
 
   while cart_index < cart.size do
     current_item = cart[cart_index]
@@ -35,7 +35,7 @@ def apply_clearance(cart)
     ready_for_checkout.push( current_item )
     cart_index += 1
   end
-  ready_for_checkout
+  ready_for_checkout #returns a new Array where every unique item in the original is present but with its price reduced by 20% if its :clearance value is true
 end
 
 
