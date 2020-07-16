@@ -17,7 +17,7 @@ def apply_coupons(cart, coupons)
                     :clearance => applicable_for_discount[:clearance], #update clearance state
                     :count => applicable_for_discount[:count] - (applicable_for_discount[:count] % current_coupon[:num])} ) #subtract the remainder of <item count> / <coupon num> from <item count>
                                                                                                                             #in order to update count and only show price per individual item
-        applicable_for_discount[:count] %= current_coupon[:num]
+        applicable_for_discount[:count] %= current_coupon[:num] #makes applicable_for_discount[:count] = remainder of operation
       end
     coupons_index += 1
   end
