@@ -8,14 +8,14 @@ def apply_coupons(cart, coupons)
   coupons_index = 0
 
   while coupons_index < coupons.size do #coupons.size = 1
-    current_coupon = coupons[coupons_index] #assign the value of current_coupon to coupons at x index
+    current_coupon = coupons[coupons_index] #assign the value of current_coupon to each coupon (coupon at x index)
     applicable_for_discount = find_item_by_name_in_collection( current_coupon[:item], cart )
     binding.pry
-      if ( applicable_for_discount[:count] / current_coupon[:num] >= 1 )
-        cart.push( {:item => "#{current_coupon[:item]} W/COUPON",
+      if ( applicable_for_discount[:count] / current_coupon[:num] >= 1 ) #if <count per item> div by <coupon num> is greater than or equal to 1
+        cart.push( {:item => "#{current_coupon[:item]} W/COUPON",     #then add this HASH to cart ARRAY
                     :price => (current_coupon[:cost] / current_coupon[:num]).round(2),
                     :clearance => applicable_for_discount[:clearance],
-                    :count => applicable_for_discount[:count] - ( applicable_for_discount[:count] % current_coupon[:num])})
+                    :count => applicable_for_discount[:count] - ( applicable_for_discount[:count] % current_coupon[:num])} )
 
         applicable_for_discount[:count] %= current_coupon[:num]
       end
