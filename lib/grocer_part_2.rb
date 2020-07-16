@@ -1,9 +1,7 @@
 require_relative './part_1_solution.rb'
 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+binding.pry
   coupons_index = 0
 
   while coupons_index < coupons.size do
