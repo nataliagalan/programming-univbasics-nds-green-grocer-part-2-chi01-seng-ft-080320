@@ -12,7 +12,7 @@ def apply_coupons(cart, coupons)
     applicable_for_discount = find_item_by_name_in_collection( current_coupon[:item], cart )
     binding.pry
       if ( applicable_for_discount[:count] / current_coupon[:num] >= 1 ) #if <count per item> div by <coupon num> is greater than or equal to 1
-        cart.push( {:item => "#{current_coupon[:item]} W/COUPON",     #then add this HASH to cart ARRAY
+        cart.push( {:item => "#{current_coupon[:item]} W/COUPON",     #then add this HASH to cart ARRAY. Update item name to "NAME W/COUPON"
                     :price => (current_coupon[:cost] / current_coupon[:num]).round(2),
                     :clearance => applicable_for_discount[:clearance],
                     :count => applicable_for_discount[:count] - ( applicable_for_discount[:count] % current_coupon[:num])} )
