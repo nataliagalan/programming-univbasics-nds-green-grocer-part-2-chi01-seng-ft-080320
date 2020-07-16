@@ -33,7 +33,7 @@ def apply_clearance(cart)
       current_item[:price] = current_item[:price] - ( current_item[:price] * 0.20 ) #update the price to discounted amount
     end
     ready_for_checkout.push( current_item )
-    cart_index += 1 
+    cart_index += 1
     binding.pry
   end
   ready_for_checkout #returns a new Array where every unique item in the original is present but with its price reduced by 20% if its :clearance value is true
