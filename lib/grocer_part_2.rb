@@ -13,7 +13,7 @@ def apply_coupons(cart, coupons)
     binding.pry
       if ( applicable_for_discount[:count] / current_coupon[:num] >= 1 ) #if <count per item> div by <coupon num> is greater than or equal to 1
         cart.push( {:item => "#{current_coupon[:item]} W/COUPON",     #then add this HASH to cart ARRAY. Update item name to "NAME W/COUPON"
-                    :price => (current_coupon[:cost] / current_coupon[:num]).round(2), #divide <coupon cost> by <coupon num> and round that to nearest 2 decimal digits
+                    :price => (current_coupon[:cost] / current_coupon[:num]).round(2), #update price by dividing <coupon cost> by <coupon num> and round that to nearest 2 decimal digits
                     :clearance => applicable_for_discount[:clearance],
                     :count => applicable_for_discount[:count] - ( applicable_for_discount[:count] % current_coupon[:num])} )
 
