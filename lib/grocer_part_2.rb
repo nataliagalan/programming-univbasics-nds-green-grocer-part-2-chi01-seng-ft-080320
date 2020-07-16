@@ -53,7 +53,7 @@ def checkout(cart, coupons)
     grand_total += current_item_total #add it to the grand_total
     index += 1
   end
-  if ( grand_total > 100 )
+  if (grand_total > 100)
     grand_total *= 0.90
   end
   grand_total
