@@ -4,10 +4,11 @@ require 'pry'
 def apply_coupons(cart, coupons)
   # cart = [{:item=>"AVOCADO", :price=>3.0, :clearance=>true, :count=>2}]
   # coupons = [{:item=>"AVOCADO", :num=>2, :cost=>5.0}]
-  binding.pry
+
   coupons_index = 0
 
   while coupons_index < coupons.size do
+      binding.pry
     current_coupon = coupons[coupons_index]
     applicable_for_discount = find_item_by_name_in_collection( current_coupon[:item], cart )
       if ( applicable_for_discount[:count] / current_coupon[:num] >= 1 )
